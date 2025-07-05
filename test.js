@@ -5,7 +5,7 @@ import { spawn } from 'child_process'
 import syntaxError from 'syntax-error'
 import { fileURLToPath } from 'url'
 import { createRequire } from 'module'
-
+// Mvrco Sexo
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 const require = createRequire(__dirname)
