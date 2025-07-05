@@ -1,9 +1,9 @@
 import fetch from 'node-fetch';
 
-const handler = async (m, {conn, usedPrefix, text, isPrems}) => {
+const handler = async (m, { conn, usedPrefix, text, isPrems }) => {
 
   try {
-    const imgUrl = 'https://files.catbox.moe/dmazrr.jpg';
+    const imgUrl = 'https://files.catbox.moe/vheoxz.png';
     const more = String.fromCharCode(8206);
     const readMore = more.repeat(850);
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
@@ -80,10 +80,10 @@ Bɪᴇɴᴠᴇɴɪᴅᴏ ᴀʟ ᴍᴇɴᴜ *ɴsғᴡ* 🔞
 
     conn.sendMessage(m.chat, { image: { url: imgUrl }, caption: str, mentions: [m.sender] }, { quoted: fake });
 
-await conn.sendMessage(m.chat, { react: { text: '🔥', key: m.key } });
+    await conn.sendMessage(m.chat, { react: { text: '🔥', key: m.key } });
 
   } catch {
-    conn.reply(m.chat,'*[ ℹ️ ] Error al enviar el menú.*\n\n> ${e}', m);
+    conn.reply(m.chat, '*[ ℹ️ ] Error al enviar el menú.*\n\n> ${e}', m);
   }
 };
 

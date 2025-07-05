@@ -1,9 +1,3 @@
-/* 
-- Google Search Bot By Jose
-- Power By Team Code Titans
-- https://whatsapp.com/channel/0029VaJxgcB0bIdvuOwKTM2Y 
-*/
-// *[ 🔍 GOOGLE SEARCH ]*
 import { googleIt } from '@bochilteam/scraper';
 import google from 'google-it';
 import axios from 'axios';
@@ -27,7 +21,7 @@ let handler = async (m, { conn, command, args, usedPrefix }) => {
             const ss = `https://image.thum.io/get/fullpage/https://www.google.com/search?q=${encodeURIComponent(text)}`;
             conn.sendFile(m.chat, ss, 'result.png', teks, fkontak, false, fake);
             m.react("✅");
-            handler.limit = 1;      
+            handler.limit = 1;
         }
     } catch (error) {
         try {
@@ -41,7 +35,7 @@ let handler = async (m, { conn, command, args, usedPrefix }) => {
                 conn.sendFile(m.chat, ss, 'error.png', teks, fkontak, false, rcanal);
             });
             m.react("✅");
-            handler.limit = 1;         
+            handler.limit = 1;
         } catch (e) {
             handler.limit = 0;
             console.log(e);

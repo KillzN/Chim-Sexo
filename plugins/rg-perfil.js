@@ -2,23 +2,23 @@ import PhoneNumber from 'awesome-phonenumber'
 import fetch from 'node-fetch'
 import fs from 'fs';
 var handler = async (m, { conn }) => {
-let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://files.catbox.moe/uogbz0.jpg')
+    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+    let pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://files.catbox.moe/qmhhxy.png')
 
-let { premium, level, description, diamantes, exp, lastclaim, registered, regTime, age, role } = global.db.data.users[m.sender];
+    let { premium, level, description, diamantes, exp, lastclaim, registered, regTime, age, role } = global.db.data.users[m.sender];
 
-age = age || 'Sin especificar';
-description = description || 'Sin descripción';
+    age = age || 'Sin especificar';
+    description = description || 'Sin descripción';
 
-let username = conn.getName(who)
-let noprem = `
+    let username = conn.getName(who)
+    let noprem = `
 *PERFIL DEL USUARIO*
 
 👤 *Nombre:* ${username}
 🏷️ *Tag:* @${who.replace(/@.+/, '')}
 🍒 *Edad:* ${age}
-💌 *Registrado:* ${registered ? '✅': '❌'}
-🪪 *Premium:* ${premium ? '✅': '❌'}
+💌 *Registrado:* ${registered ? '✅' : '❌'}
+🪪 *Premium:* ${premium ? '✅' : '❌'}
 📝 *Descripción:* ${description}
 
 *_RECURSOS OBTENIDOS_*
@@ -30,9 +30,9 @@ let noprem = `
 
 > By ${botname}
 `.trim()
-let prem = `╭─⪩ 𓆩 𝐔𝐒𝐔𝐀𝐑𝐈𝐎 𝐏𝐑𝐄𝐌𝐈𝐔𝐌 𓆪
+    let prem = `╭─⪩ 𓆩 𝐔𝐒𝐔𝐀𝐑𝐈𝐎 𝐏𝐑𝐄𝐌𝐈𝐔𝐌 𓆪
 │⧼👤⧽ *Usᴜᴀʀɪᴏ:* ${username}
-│⧼💌⧽ *Rᴇɢɪsᴛʀᴀᴅᴏ:* ${registered ? '✅': '❌'}
+│⧼💌⧽ *Rᴇɢɪsᴛʀᴀᴅᴏ:* ${registered ? '✅' : '❌'}
 │⧼🔱⧽ *Rᴏʟ:* Vip 👑
 ╰─────────────⪩
 
@@ -42,7 +42,7 @@ let prem = `╭─⪩ 𓆩 𝐔𝐒𝐔𝐀𝐑𝐈𝐎 𝐏𝐑𝐄𝐌𝐈𝐔
 │⧼💫⧽ *Exᴘ* ${exp}
 │⧼⚜️⧽ *Rᴀɴɢᴏ:* ${role}
 ╰─────────────⪩`.trim()
-conn.sendFile(m.chat, pp, 'perfil.jpg', `${premium ? prem.trim() : noprem.trim()}`, m, rcanal, { mentions: [who] })
+    conn.sendFile(m.chat, pp, 'perfil.jpg', `${premium ? prem.trim() : noprem.trim()}`, m, rcanal, { mentions: [who] })
 }
 handler.help = ['profile']
 handler.register = true

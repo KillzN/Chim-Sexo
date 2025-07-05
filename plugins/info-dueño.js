@@ -1,13 +1,38 @@
 let handler = async (m, { conn }) => {
-  await m.react('🐼');
+  await m.react('🥷🏼');
 
   // Crear contacto VCARD
-  let list = [{
-    displayName: "Jota",
-    vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:Jota\nitem1.TEL;waid=573155227977:573155227977\nitem1.X-ABLabel:Número\nitem2.EMAIL;type=INTERNET:team.sunflare@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://www.instagram.com/nee\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Colombia 🇨🇴;;;;\nitem4.X-ABLabel:País\nEND:VCARD`
+  const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Mvrco Sex
+item1.TEL;waid=56983073328:56983073328
+item1.X-ABLabel:Número
+item2.URL:https://www.instagram.com/ineffable.mvrco
+item3.X-ABLabel:Instagram
+item4.ADR:;;Perú 🇵🇪;;;;
+item4.X-ABLabel:País
+END:VCARD`;
+
+  const list = [{
+    displayName: "MvrcoSex",
+    vcard
   }];
 
-  // Enviar solo el contacto, sin adornos
+  // Enviar mensaje con botón (tipo buttonsMessage con URL funcional)
+  await conn.sendMessage(m.chat, {
+    text: `✨ *Este es el contacto oficial de Mvrco Sex* ✨\n📱 Instagram: @ineffable.mvrco\n🌍 País: Perú 🇵🇪`,
+    footer: 'Presiona el botón para hablar directo por WhatsApp 📲',
+    buttons: [
+      {
+        buttonText: { displayText: '💬 Hablar por WhatsApp' },
+        type: 1,
+        url: 'https://wa.me/56983073328'
+      }
+    ],
+    headerType: 1
+  }, { quoted: m });
+
+  // Enviar el contacto
   await conn.sendMessage(m.chat, {
     contacts: {
       displayName: `${list.length} Contacto`,
@@ -18,6 +43,6 @@ let handler = async (m, { conn }) => {
 
 handler.help = ['owner', 'creador'];
 handler.tags = ['info'];
-handler.command = /^(owner|dueño)$/i;
+handler.command = /^(owner|dueño|ss)$/i;
 
 export default handler;

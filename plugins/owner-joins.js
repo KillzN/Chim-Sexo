@@ -10,14 +10,14 @@ let handler = async (m, { conn, text }) => {
         if (!code) return m.reply('*⚠️ enlace inválido.*')
 
         let res = await conn.groupAcceptInvite(code)
-        m.reply(`*✅ Jota se unió correctamente al grupo.*`)
+        m.reply(`*✅ MvrcoSex se unió correctamente al grupo.*`)
 
-/*let groupId = await conn.groupAcceptInvite(code)
-
-let groupMetadata = await conn.groupMetadata(groupId).catch(() => null)
-if (groupMetadata) return m.reply(`*[ 🦈 ] Ya estoy en este grupo.*`)
-
-m.reply(`*✅ Shadow se unió correctamente al grupo.*\n*¡Disfruta del Bot en tu grupo!*`)*/
+        /*let groupId = await conn.groupAcceptInvite(code)
+        
+        let groupMetadata = await conn.groupMetadata(groupId).catch(() => null)
+        if (groupMetadata) return m.reply(`*[ 🦈 ] Ya estoy en este grupo.*`)
+        
+        m.reply(`*✅ Shadow se unió correctamente al grupo.*\n*¡Disfruta del Bot en tu grupo!*`)*/
 
 
         if (expired) {
@@ -27,7 +27,7 @@ m.reply(`*✅ Shadow se unió correctamente al grupo.*\n*¡Disfruta del Bot en t
             m.reply(`*⌛ ${botname} permanecerá en el grupo durante \`${expired}\` días.*`)
         }
     } catch {
-        return m.reply(`*✖️ Ocurrió un error al otrar al grupo.*`) 
+        return m.reply(`*✖️ Ocurrió un error al otrar al grupo.*`)
     }
 }
 

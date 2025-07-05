@@ -1,30 +1,23 @@
-import fetch from 'node-fetch';
-import PhoneNumber from 'awesome-phonenumber';
+const handler = async (m, { isOwner, isAdmin, conn, text, participants, args, command, usedPrefix }) => {
 
-const handler = async (m, { participants, args }) => {
-  const pesan = args.join` `;
-  const oi = `*» INFO :* ${pesan}`;
-  let mensajes = `*!  MENCION GENERAL V2  !*\n  *PARA ${participants.length} MIEMBROS* 🗣️\n\n ${oi}\n\n╭  ┄ 𝅄  ۪꒰ \`⡞᪲=͟͟͞Jota Bot ≼᳞ׄ\` ꒱  ۟  𝅄 ┄\n`;
+  if (usedPrefix == 'a' || usedPrefix == 'A') return;
 
-  for (const mem of participants) {
-    let numero = PhoneNumber('+' + mem.id.replace('@s.whatsapp.net', '')).getNumber('international');
-    let api = `https://delirius-apiofc.vercel.app/tools/country?text=${numero}`;
-    let response = await fetch(api);
-    let json = await response.json();
-
-    let paisdata = json.result ? json.result.emoji : '🍫';
-    mensajes += `${paisdata} @${mem.id.split('@')[0]}\n`;
+  if (!(isAdmin || isOwner)) {
+    global.dfail('admin', m, conn);
+    throw false;
   }
-
-    mensajes += `╰⸼ ┄ ┄ ┄ ─  ꒰  ׅ୭ *${vs}* ୧ ׅ ꒱  ┄  ─ ┄ ⸼`;
-
-  conn.sendMessage(m.chat, { text: mensajes, mentions: participants.map((a) => a.id) });
+  const pesan = args.join` `;
+  const oi = `𝙀𝙏𝙄𝙌𝙐𝙀𝙏𝘼𝙎:* ${pesan}`;
+  let teks = `> *Yᴏᴜʀ Pᴏᴛᴇɴᴛɪᴀʟ Is Iɴғɪɴɪᴛᴇ, Dᴀʀᴇ Tᴏ Exᴘʟᴏʀᴇ Iᴛ 💋*\n\n *${oi}\n\n➥ _*@ineffable.mvrco:*_\n`;
+  for (const mem of participants) {
+    teks += `*💗 ➸* @${mem.id.split('@')[0]}\n`;
+  }
+  teks += `*└KɪʟʟBᴏᴛ ⇝@ineffable.mvrco*`;
+  conn.sendMessage(m.chat, { text: teks, mentions: participants.map((a) => a.id) });
 };
-
-handler.help = ['todos *<mensaje opcional>*'];
-handler.tags = ['grupo'];
-handler.command = /^(tagall2|invocar2|marcar2|todos2|invocación2|t2)$/i;
+handler.help = ['todos *<txt>*'];
+handler.tags = ['gc'];
+handler.command = /^(tagall1|t1|invocar1|marcar1|todos1|invocación1)$/i;
 handler.admin = true;
 handler.group = true;
-
 export default handler;

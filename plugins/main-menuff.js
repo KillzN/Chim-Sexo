@@ -1,10 +1,10 @@
 import fetch from 'node-fetch';
 
-const handler = async (m, {conn, usedPrefix, text}) => {
+const handler = async (m, { conn, usedPrefix, text }) => {
 
   try {
-    await m.react ('🎮');
-    const videoUrl = 'https://files.catbox.moe/6ftr4u.mp4'
+    await m.react('🎮');
+    const videoUrl = 'https://files.catbox.moe/uh0iki.jpg'
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
 
     const str = `*Hola ${taguser} este es el menú Free Fire*
@@ -26,15 +26,15 @@ const handler = async (m, {conn, usedPrefix, text}) => {
 ╰──•
 `.trim();
 
-      await conn.sendMessage(m.chat, {
-            video: { url: videoUrl },
-            caption: str,
-            mentions: [m.sender],
-            gifPlayback: true
-        }, { quoted: fkontak })
+    await conn.sendMessage(m.chat, {
+      video: { url: videoUrl },
+      caption: str,
+      mentions: [m.sender],
+      gifPlayback: true
+    }, { quoted: fkontak })
 
   } catch (e) {
-    conn.reply(m.chat,`*❌ Error al enviar el menú.*\n${e}`, m);
+    conn.reply(m.chat, `*❌ Error al enviar el menú.*\n${e}`, m);
   }
 };
 

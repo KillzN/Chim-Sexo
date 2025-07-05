@@ -1,4 +1,4 @@
-const handler = async (m, {isOwner, isAdmin, conn, text, participants, args, command, usedPrefix}) => {
+const handler = async (m, { isOwner, isAdmin, conn, text, participants, args, command, usedPrefix }) => {
 
   if (usedPrefix == 'a' || usedPrefix == 'A') return;
 
@@ -7,13 +7,13 @@ const handler = async (m, {isOwner, isAdmin, conn, text, participants, args, com
     throw false;
   }
   const pesan = args.join` `;
-const oi = `*\`AVISO:\`* ${pesan}`;
-  let teks = `𝗝𝗢𝗧𝗔 𝗕𝗢𝗧 𝗟𝗢𝗦 𝗜𝗡𝗩𝗢𝗖𝗔 🫩\n*INTEGRANTES:* ${participants.length}\n\n ${oi}\n\nෆ *ETIQUETAS*\n`;
+  const oi = `𝙀𝙏𝙄𝙌𝙐𝙀𝙏𝘼𝙎:* ${pesan}`;
+  let teks = `> *Tʜᴇ Sᴜɴ Is Bʀɪɢʜᴛ Bᴜᴛ Nᴏᴛ As Bʀɪɢʜᴛ As Mᴇ ☀️*\n\n *${oi}\n\n➥ _*@ineffable.mvrco:*_\n`;
   for (const mem of participants) {
-    teks += `🐼🤍 @${mem.id.split('@')[0]}\n`;
+    teks += `*🥷🏼 ⇝* @${mem.id.split('@')[0]}\n`;
   }
-  teks += `> ${dev}`;
-  conn.sendMessage(m.chat, {text: teks, mentions: participants.map((a) => a.id)} );
+  teks += `*└KɪʟʟBᴏᴛ ⇝@ineffable.mvrco*`;
+  conn.sendMessage(m.chat, { text: teks, mentions: participants.map((a) => a.id) });
 };
 handler.help = ['todos *<txt>*'];
 handler.tags = ['gc'];

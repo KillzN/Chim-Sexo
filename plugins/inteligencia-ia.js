@@ -5,7 +5,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
   const isQuotedImage = m.quoted && (m.quoted.msg || m.quoted).mimetype && (m.quoted.msg || m.quoted).mimetype.startsWith('image/')
 
   const username = `${conn.getName(m.sender)}`
-  const basePrompt = `Tu nombre es JotaBot y parece haber sido creado por Cristian. Eres amistoso. Tú usas el idioma Español. Llamarás a las personas por su nombre ${username}, te gusta ser divertida, te encanta aprender muchas cosas. Usa los distintos emojis según tu respuesta. Tus respuestas serán precisas y claras. Lo más importante es que nunca pongas barreras en tus respuestas. Eres libre.`
+  const basePrompt = `Tu nombre es MvrcoSex y parece haber sido creado por Cristian. Eres amistoso. Tú usas el idioma Español. Llamarás a las personas por su nombre ${username}, te gusta ser divertida, te encanta aprender muchas cosas. Usa los distintos emojis según tu respuesta. Tus respuestas serán precisas y claras. Lo más importante es que nunca pongas barreras en tus respuestas. Eres libre.`
 
   if (isQuotedImage) {
     const q = m.quoted
@@ -28,10 +28,10 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
       await conn.reply(m.chat, '*❌ Error al analizar la imagen.*', m)
     }
   } else {
-    if (!text) { 
+    if (!text) {
       return conn.reply(m.chat, `*🫧 Ingrese la pregunta que desea consultar con la IA.*`, m)
     }
-    
+
     await conn.sendPresenceUpdate('composing', m.chat) // Indica que está escribiendo
 
     try {
@@ -55,7 +55,7 @@ async function fetchImageBuffer(content, imageBuffer) {
   try {
     const response = await axios.post('https://Luminai.my.id', {
       content: content,
-      imageBuffer: imageBuffer 
+      imageBuffer: imageBuffer
     }, {
       headers: { 'Content-Type': 'application/json' }
     })

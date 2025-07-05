@@ -4,21 +4,28 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     await m.react('🤍');
 
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender;
-    let name = await conn.getName(who);
-    let edtr = `@${m.sender.split`@`[0]}`;
     let username = await conn.getName(m.sender);
 
-    // Descargar imagen como buffer
-    let res = await fetch('https://files.catbox.moe/8an9fs.jpg');
+    // Descargar imagen como thumbnail (puedes cambiar la URL por una tuya)
+    let res = await fetch('https://files.catbox.moe/qmhhxy.png');
     let thumb = await res.buffer();
 
-    // VCARD
+    // VCARD con tus datos
     let list = [{
-        displayName: "Cristian Escobar",
-        vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:Cristian Escobar\nitem1.TEL;waid=51927238856:51927238856\nitem1.X-ABLabel:Número\nitem2.EMAIL;type=INTERNET:cristianescobar.vx@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://www.instagram.com/dev.criss_vx\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Perú;;;;\nitem4.X-ABLabel:País\nEND:VCARD`
+        displayName: "Mvrco Sex",
+        vcard: `BEGIN:VCARD
+VERSION:3.0
+FN:Mvrco Sex
+item1.TEL;waid=56983073328:56983073328
+item1.X-ABLabel:Número
+item2.URL:https://www.instagram.com/ineffable.mvrco
+item3.X-ABLabel:Instagram
+item4.ADR:;;Perú;;;;
+item4.X-ABLabel:País
+END:VCARD`
     }];
 
-    // Enviar contacto con vista previa enriquecida
+    // Enviar contacto con preview enriquecido (thumbnail, título y botón WhatsApp)
     await conn.sendMessage(m.chat, {
         contacts: {
             displayName: `${list.length} Contacto`,
@@ -27,26 +34,24 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
         contextInfo: {
             externalAdReply: {
                 showAdAttribution: true,
-                title: 'Hello I am the creator of Jota',
-                body: 'Dev.Criss 🇦🇱',
+                title: 'Hᴏʟᴀ, Mɪ Cʀᴇᴀᴅᴏʀ Es Mᴀʀᴄᴏ Sᴇxᴏ',
+                body: 'Instagram: @ineffable.mvrco',
                 thumbnail: thumb,
-                sourceUrl: 'https://wa.me/51927238856?text=¡Hola!,+Quiero+bot+perzonalizando.',
+                sourceUrl: 'https://wa.me/56983073328',
                 mediaType: 1,
                 renderLargerThumbnail: true
             }
         }
-    }, {
-        quoted: m
-    });
+    }, { quoted: m });
 
-    // Mensaje de texto adicional
-    let txt = `👋🏻 *Hola \`${username}\` este es*\n*el contacto de mi creador*`;
+    // Mensaje de texto adicional personalizado con mención
+    let txt = `👋🏻 *Hola @${username}, este es*\n*el contacto oficial de Mvrco Sex.*\n\nPuedes agregarlo o escribirle usando los botones que aparecen abajo.`;
 
-    await conn.sendMessage(m.chat, { text: txt }, { quoted: m });
+    await conn.sendMessage(m.chat, { text: txt, mentions: [m.sender] }, { quoted: m });
 };
 
 handler.help = ['owner', 'creador'];
 handler.tags = ['info'];
-handler.command = /^(creator|creador)$/i;
+handler.command = /^(owner|dueño|ss|creador)$/i;
 
 export default handler;

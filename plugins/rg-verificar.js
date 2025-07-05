@@ -9,7 +9,7 @@ let handler = async function (m, { conn, text, args, usedPrefix, command }) {
     let name2 = conn.getName(m.sender)
     let whe = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : m.sender
 
-    let perfil = await conn.profilePictureUrl(whe, 'image').catch(_ => 'https://files.catbox.moe/uogbz0.jpg')
+    let perfil = await conn.profilePictureUrl(whe, 'image').catch(_ => 'https://files.catbox.moe/qmhhxy.png')
 
     if (user.registered === true) {
         return m.reply(`*${emojis} Ya te encuentras registrado.*\n\n*¿Quieres volver a registrarte?*\n\n*Use este comando para eliminar su registro*\n*\`${usedPrefix}unreg\`*`)
@@ -33,7 +33,7 @@ let handler = async function (m, { conn, text, args, usedPrefix, command }) {
     global.db.data.users[m.sender].money += 600
     global.db.data.users[m.sender].diamantes += 15
     global.db.data.users[m.sender].exp += 245
-    global.db.data.users[m.sender].joincount += 5    
+    global.db.data.users[m.sender].joincount += 5
 
     let who;
     if (m.quoted && m.quoted.sender) {
@@ -58,8 +58,8 @@ let handler = async function (m, { conn, text, args, usedPrefix, command }) {
             externalAdReply: {
                 title: '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥✅』⊰',
                 body: dev,
-                thumbnailUrl: 'https://files.catbox.moe/uogbz0.jpg',
-                sourceUrl: 'https://whatsapp.com/channel/0029VauTE8AHltY1muYir31n',
+                thumbnailUrl: 'https://files.catbox.moe/qmhhxy.png',
+                sourceUrl: 'https://whatsapp.com/channel/0029Vb4TKBCD38CNEkfHdj1z',
                 mediaType: 1,
                 showAdAttribution: true,
                 renderLargerThumbnail: true
@@ -67,15 +67,15 @@ let handler = async function (m, { conn, text, args, usedPrefix, command }) {
         }
     }, { quoted: m });
 
-let chtxt = `👤 *𝚄𝚂𝙴𝚁:* ${m.pushName || 'Anónimo'}
+    let chtxt = `👤 *𝚄𝚂𝙴𝚁:* ${m.pushName || 'Anónimo'}
 ☕ *𝚁𝙴𝙶𝙸𝚂𝚃𝚁𝙾:* ${user.name}
 🤍 *𝙴𝙳𝙰𝙳:* ${user.age} años
 📝 *𝙳𝙴𝚂𝙲:* ${user.descripcion}
 🪪 *𝚂𝙴𝚁𝙸𝙴:*
 ⤷ ${sn}`;
 
-    let channelID = '120363357231409846@newsletter';
-        await conn.sendMessage(channelID, {
+    let channelID = '120363394571210599@newsletter';
+    await conn.sendMessage(channelID, {
         text: chtxt,
         contextInfo: {
             externalAdReply: {
