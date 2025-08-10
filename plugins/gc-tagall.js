@@ -8,11 +8,11 @@ const handler = async (m, { isOwner, isAdmin, conn, text, participants, args, co
   }
   const pesan = args.join` `;
   const oi = `𝙀𝙏𝙄𝙌𝙐𝙀𝙏𝘼𝙎:* ${pesan}`;
-  let teks = `> *Tʜᴇ Sᴜɴ Is Bʀɪɢʜᴛ Bᴜᴛ Nᴏᴛ As Bʀɪɢʜᴛ As Mᴇ ☀️*\n\n *${oi}\n\n➥ _*@chim.ventas:*_\n`;
+  let teks = `> *https://chat.whatsapp.com/KksmRPi3lUa5xrXNUoqvFq*\n\n *${oi}\n\n➥ _*@𝗰𝗵𝗶𝗺.𝘃𝗲𝗻𝘁𝗮𝘀:*_\n`;
   for (const mem of participants) {
-    teks += `*🥷🏼 ⇝* @${mem.id.split('@')[0]}\n`;
+    teks += `*🩷 ⇝* @${mem.id.split('@')[0]}\n`;
   }
-  teks += `*└KɪʟʟBᴏᴛ ⇝@chim.ventas*`;
+  teks += `*└Cʜɪᴍ.Bᴏᴛ*`;
   conn.sendMessage(m.chat, { text: teks, mentions: participants.map((a) => a.id) });
 };
 handler.help = ['todos *<txt>*'];
