@@ -18,7 +18,7 @@ VERSION:3.0
 FN:Mvrco Sex
 item1.TEL;waid=59178140029:59178140029
 item1.X-ABLabel:Número
-item2.URL:https://www.instagram.com/ineffable.mvrco
+item2.URL:https://www.instagram.com/chim.ventas
 item3.X-ABLabel:Instagram
 item4.ADR:;;Perú;;;;
 item4.X-ABLabel:País
@@ -35,7 +35,7 @@ END:VCARD`
             externalAdReply: {
                 showAdAttribution: true,
                 title: 'Hᴏʟᴀ, Mɪ Cʀᴇᴀᴅᴏʀ Es Mᴀʀᴄᴏ Sᴇxᴏ',
-                body: 'Instagram: @ineffable.mvrco',
+                body: 'Instagram: @chim.ventas',
                 thumbnail: thumb,
                 sourceUrl: 'https://wa.me/59178140029',
                 mediaType: 1,

@@ -7,7 +7,7 @@ VERSION:3.0
 FN:Mvrco Sex
 item1.TEL;waid=59178140029:59178140029
 item1.X-ABLabel:Número
-item2.URL:https://www.instagram.com/ineffable.mvrco
+item2.URL:https://www.instagram.com/chim.ventas
 item3.X-ABLabel:Instagram
 item4.ADR:;;Perú 🇵🇪;;;;
 item4.X-ABLabel:País
@@ -20,7 +20,7 @@ END:VCARD`;
 
   // Enviar mensaje con botón (tipo buttonsMessage con URL funcional)
   await conn.sendMessage(m.chat, {
-    text: `✨ *Este es el contacto oficial de Mvrco Sex* ✨\n📱 Instagram: @ineffable.mvrco\n🌍 País: Perú 🇵🇪`,
+    text: `✨ *Este es el contacto oficial de Mvrco Sex* ✨\n📱 Instagram: @chim.ventas\n🌍 País: Perú 🇵🇪`,
     footer: 'Presiona el botón para hablar directo por WhatsApp 📲',
     buttons: [
       {

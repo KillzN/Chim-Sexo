@@ -37,7 +37,7 @@ global.repobot = 'https://github.com/KillzN/Chim-Bot'
 global.grupo = 'https://chat.whatsapp.com/HqhAoXS8TCcJIn0KrbJZKz'
 global.comu = 'https://chat.whatsapp.com/Ehs4pdSEW4o9ub8G3SPVaT'
 global.channel = 'https://www.whatsapp.com/channel/0029Vb4TKBCD38CNEkfHdj1z'
-global.insta = 'https://www.instagram.com/ineffable.mvrco'
+global.insta = 'https://www.instagram.com/chim.ventas'
 
 
 global.estilo = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "59178140029-120363317332020195@g.us" } : {}) }, message: { orderMessage: { itemCount: -999999, status: 1, surface: 1, message: '𝙼𝚟𝚛𝚌𝚘 𝚂𝚎𝚡𝚘', orderTitle: 'Bang', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net' } } }

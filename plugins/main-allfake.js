@@ -68,7 +68,7 @@ handler.all = async function (m) {
     var grupo = 'https://chat.whatsapp.com/HqhAoXS8TCcJIn0KrbJZKz'
     var github = 'https://github.com/KillzN/Chim-Bot'
     var web = 'https://killznstore.com/'
-    let instagram = 'https://www.instagram.com/ineffable.mvrco'
+    let instagram = 'https://www.instagram.com/chim.ventas'
 
     global.redes = [grupo, github, web, instagram].getRandom()
 
