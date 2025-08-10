@@ -1,5 +1,5 @@
 {
-    "name": "MvrcoSex",
+    "name": "Chim-Bot",
     "version": "1.0.0",
     "description": "WhatsApp Bot Multi Device",
     "main": "main.js",
@@ -18,16 +18,16 @@
         "eslint": "eslint .",
         "eslintfix": "eslint --fix ."
     },
-    "homepage": "https://github.com/KillzN/MvrcoSex",
+    "homepage": "https://github.com/KillzN/Chim-Bot",
     "author": {
         "name": "Cristian Escobar"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/KillzN/MvrcoSex.git"
+        "url": "git+https://github.com/KillzN/Chim-Bot.git"
     },
     "bugs": {
-        "url": "https://github.com/KillzN/MvrcoSex/issues"
+        "url": "https://github.com/KillzN/Chim-Bot/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {

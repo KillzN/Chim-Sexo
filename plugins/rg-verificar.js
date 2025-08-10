@@ -9,7 +9,7 @@ let handler = async function (m, { conn, text, args, usedPrefix, command }) {
     let name2 = conn.getName(m.sender)
     let whe = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : m.sender
 
-    let perfil = await conn.profilePictureUrl(whe, 'image').catch(_ => 'https://files.catbox.moe/qmhhxy.png')
+    let perfil = await conn.profilePictureUrl(whe, 'image').catch(_ => 'https://files.catbox.moe/mszw73.jpg')
 
     if (user.registered === true) {
         return m.reply(`*${emojis} Ya te encuentras registrado.*\n\n*¿Quieres volver a registrarte?*\n\n*Use este comando para eliminar su registro*\n*\`${usedPrefix}unreg\`*`)
@@ -58,7 +58,7 @@ let handler = async function (m, { conn, text, args, usedPrefix, command }) {
             externalAdReply: {
                 title: '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥✅』⊰',
                 body: dev,
-                thumbnailUrl: 'https://files.catbox.moe/qmhhxy.png',
+                thumbnailUrl: 'https://files.catbox.moe/mszw73.jpg',
                 sourceUrl: 'https://whatsapp.com/channel/0029Vb4TKBCD38CNEkfHdj1z',
                 mediaType: 1,
                 showAdAttribution: true,

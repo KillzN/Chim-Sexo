@@ -7,7 +7,7 @@ export async function all(m) {
     if (+new Date() > chats.expired) {
         await this.reply(m.chat, `*‼️ Tiempo de permanencia finalizado* ⏱️ 
 > Contacta a mí propietario para adquirir nuevamente 🐼
-> Wa.me//+56983073328*`)
+> Wa.me//+59178140029*`)
         await this.groupLeave(m.chat)
         chats.expired = null
     }

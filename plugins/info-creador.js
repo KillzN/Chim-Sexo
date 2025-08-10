@@ -7,7 +7,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     let username = await conn.getName(m.sender);
 
     // Descargar imagen como thumbnail (puedes cambiar la URL por una tuya)
-    let res = await fetch('https://files.catbox.moe/qmhhxy.png');
+    let res = await fetch('https://files.catbox.moe/mszw73.jpg');
     let thumb = await res.buffer();
 
     // VCARD con tus datos
@@ -16,7 +16,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
         vcard: `BEGIN:VCARD
 VERSION:3.0
 FN:Mvrco Sex
-item1.TEL;waid=56983073328:56983073328
+item1.TEL;waid=59178140029:59178140029
 item1.X-ABLabel:Número
 item2.URL:https://www.instagram.com/ineffable.mvrco
 item3.X-ABLabel:Instagram
@@ -37,7 +37,7 @@ END:VCARD`
                 title: 'Hᴏʟᴀ, Mɪ Cʀᴇᴀᴅᴏʀ Es Mᴀʀᴄᴏ Sᴇxᴏ',
                 body: 'Instagram: @ineffable.mvrco',
                 thumbnail: thumb,
-                sourceUrl: 'https://wa.me/56983073328',
+                sourceUrl: 'https://wa.me/59178140029',
                 mediaType: 1,
                 renderLargerThumbnail: true
             }

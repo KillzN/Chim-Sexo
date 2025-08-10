@@ -6,7 +6,7 @@ const handler = async (m, { conn, usedPrefix, text, isPrems }) => {
     await m.react(emojis);
     const _uptime = process.uptime() * 1000;
     const uptime = clockString(_uptime);
-    const videoUrl = 'https://files.catbox.moe/qmhhxy.png'
+    const videoUrl = 'https://files.catbox.moe/mszw73.jpg'
     const more = String.fromCharCode(8206);
     const readMore = more.repeat(850);
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];

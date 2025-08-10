@@ -5,7 +5,7 @@ let handler = async (m, { conn }) => {
   const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:Mvrco Sex
-item1.TEL;waid=56983073328:56983073328
+item1.TEL;waid=59178140029:59178140029
 item1.X-ABLabel:Número
 item2.URL:https://www.instagram.com/ineffable.mvrco
 item3.X-ABLabel:Instagram
@@ -14,7 +14,7 @@ item4.X-ABLabel:País
 END:VCARD`;
 
   const list = [{
-    displayName: "MvrcoSex",
+    displayName: "Chim-Bot",
     vcard
   }];
 
@@ -26,7 +26,7 @@ END:VCARD`;
       {
         buttonText: { displayText: '💬 Hablar por WhatsApp' },
         type: 1,
-        url: 'https://wa.me/56983073328'
+        url: 'https://wa.me/59178140029'
       }
     ],
     headerType: 1

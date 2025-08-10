@@ -40,7 +40,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
 ┃ *_🐼 𝗘𝗡𝗧𝗥𝗢   ${taguser}_* 
 ┃ *_Un gusto tenerte aqui_*
 ┃ *_Disfruta tu estadía 😇_*
-┗━━━Pᴏʀɴʜᴜʙ: @BʏKɪʟʟᴢN━━━━`
+┗━━━Chim-Bot━━━━`
     ]
 
 

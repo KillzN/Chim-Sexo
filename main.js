@@ -105,8 +105,8 @@ global.loadChatgptDB = async function loadChatgptDB() {
 loadChatgptDB();
 
 global.creds = 'creds.json'
-global.authFile = 'MvrcoSession'
-global.authFileJB = 'MvrcoJadiBot'
+global.authFile = 'ChimSession'
+global.authFileJB = 'ChimJadiBot'
 /*global.rutaBot = join(__dirname, authFile)
 global.rutaJadiBot = join(__dirname, authFileJB)
 
@@ -180,7 +180,7 @@ const connectionOptions = {
   logger: pino({ level: 'silent' }),
   printQRInTerminal: opcion == '1' ? true : methodCodeQR ? true : false,
   mobile: MethodMobile,
-  browser: opcion == '1' ? ['MvrcoSex', 'Edge', '20.0.04'] : methodCodeQR ? ['MvrcoSex', 'Edge', '20.0.04'] : ["Ubuntu", "Chrome", "20.0.04"],
+  browser: opcion == '1' ? ['Chim-Bot', 'Edge', '20.0.04'] : methodCodeQR ? ['Chim-Bot', 'Edge', '20.0.04'] : ["Ubuntu", "Chrome", "20.0.04"],
   auth: {
     creds: state.creds,
     keys: makeCacheableSignalKeyStore(state.keys, Pino({ level: "fatal" }).child({ level: "fatal" })),
@@ -232,7 +232,7 @@ conn.well = false
 if (!opts['test']) {
   if (global.db) setInterval(async () => {
     if (global.db.data) await global.db.write()
-    if (opts['autocleartmp'] && (global.support || {}).find) (tmp = [os.tmpdir(), 'tmp', "MvrcoJadiBot"], tmp.forEach(filename => cp.spawn('find', [filename, '-amin', '2', '-type', 'f', '-delete'])))
+    if (opts['autocleartmp'] && (global.support || {}).find) (tmp = [os.tmpdir(), 'tmp', "ChimJadiBot"], tmp.forEach(filename => cp.spawn('find', [filename, '-amin', '2', '-type', 'f', '-delete'])))
   }, 30 * 1000)
 }
 if (opts['server']) (await import('./lib/server.js')).default(global.conn, PORT)
@@ -259,7 +259,7 @@ async function connectionUpdate(update) {
     }
   }
   if (connection == 'open') {
-    console.log(chalk.bold.greenBright(`\n❒⸺⸺⸺⸺【• CONECTADO •】⸺⸺⸺⸺❒\n│\n│ ✅ Se ha conectado exitosamente.\n│\n❒⸺⸺⸺⸺【• MvrcoSex •】⸺⸺⸺⸺❒`))
+    console.log(chalk.bold.greenBright(`\n❒⸺⸺⸺⸺【• CONECTADO •】⸺⸺⸺⸺❒\n│\n│ ✅ Se ha conectado exitosamente.\n│\n❒⸺⸺⸺⸺【• Chim-Bot •】⸺⸺⸺⸺❒`))
   }
   let reason = new Boom(lastDisconnect?.error)?.output?.statusCode
   if (connection === 'close') {
@@ -290,9 +290,9 @@ async function connectionUpdate(update) {
 process.on('uncaughtException', console.error);
 
 async function connectSubBots() {
-  const subBotDirectory = './MvrcoJadiBot';
+  const subBotDirectory = './ChimJadiBot';
   if (!existsSync(subBotDirectory)) {
-    console.log('☁️ MvrcoSex no tiene Sub-Bots vinculados.');
+    console.log('☁️ Chim-Bot no tiene Sub-Bots vinculados.');
     return;
   }
 
@@ -315,11 +315,11 @@ async function connectSubBots() {
 (async () => {
   global.conns = [];
 
-  const mainBotAuthFile = 'MvrcoSession';
+  const mainBotAuthFile = 'ChimSession';
   try {
     const mainBot = await connectionUpdate(mainBotAuthFile);
     global.conns.push(mainBot);
-    console.log(chalk.bold.greenBright(`🐼 MvrcoSex conectado correctamente.`))
+    console.log(chalk.bold.greenBright(`🐼 Chim-Bot conectado correctamente.`))
 
     await connectSubBots();
   } catch (error) {
@@ -451,13 +451,13 @@ function clearTmp() {
 }
 function purgeSession() {
   let prekey = []
-  let directorio = readdirSync("./MvrcoSession")
+  let directorio = readdirSync("./ChimSession")
   let filesFolderPreKeys = directorio.filter(file => {
     return file.startsWith('pre-key-')
   })
   prekey = [...prekey, ...filesFolderPreKeys]
   filesFolderPreKeys.forEach(files => {
-    unlinkSync(`./MvrcoSession/${files}`)
+    unlinkSync(`./ChimSession/${files}`)
   })
 }
 function purgeSessionSB() {
@@ -478,16 +478,16 @@ function purgeSessionSB() {
       }
     })
     if (SBprekey.length === 0) {
-      console.log(chalk.bold.green(`\n╭» 🟡 MvrcoJadiBot 🟡\n│→ NADA POR ELIMINAR \n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― 🗑️♻️`))
+      console.log(chalk.bold.green(`\n╭» 🟡 ChimJadiBot 🟡\n│→ NADA POR ELIMINAR \n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― 🗑️♻️`))
     } else {
-      console.log(chalk.bold.cyanBright(`\n╭» ⚪ MvrcoJadiBot ⚪\n│→ ARCHIVOS NO ESENCIALES ELIMINADOS\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― 🗑️♻️`))
+      console.log(chalk.bold.cyanBright(`\n╭» ⚪ ChimJadiBot ⚪\n│→ ARCHIVOS NO ESENCIALES ELIMINADOS\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― 🗑️♻️`))
     }
   } catch (err) {
-    console.log(chalk.bold.red(`\n╭» 🔴 MvrcoJadiBot 🔴\n│→ OCURRIÓ UN ERROR\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― 🗑️♻️\n` + err))
+    console.log(chalk.bold.red(`\n╭» 🔴 ChimJadiBot 🔴\n│→ OCURRIÓ UN ERROR\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― 🗑️♻️\n` + err))
   }
 }
 function purgeOldFiles() {
-  const directories = ['./MvrcoSession/', './MvrcoJadiBot/']
+  const directories = ['./ChimSession/', './ChimJadiBot/']
   directories.forEach(dir => {
     readdirSync(dir, (err, files) => {
       if (err) throw err

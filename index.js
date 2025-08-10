@@ -21,7 +21,7 @@ say('Mvrco \n Sex', {
   align: 'center',
   gradient: ['red', 'magenta']
 });
-say(`Developed By KILLBOT 🌹\nMvrcoSex 🇦🇱\nEl único`, {
+say(`Developed By KILLBOT 🌹\nChim-Bot 🇦🇱\nEl único`, {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']

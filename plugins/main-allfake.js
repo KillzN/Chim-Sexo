@@ -33,13 +33,13 @@ handler.all = async function (m) {
     //let pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://telegra.ph/file/327f6ad853cb4f405aa80.jpg')
 
     //CREADOR Y OTROS
-    global.creador = 'wa.me/56983073328'
+    global.creador = 'wa.me/59178140029'
     global.botreal = `${(conn.user.jid == global.conn.user.jid ? 'Oficial' : 'Sub-Bot')}`
     global.ofcbot = `${conn.user.jid.split('@')[0]}`
-    global.asistencia = 'Wa.me/56983073328'
-    global.namech = 'MvrcoSex'
+    global.asistencia = 'Wa.me/59178140029'
+    global.namech = 'Chim-Bot'
     global.namechannel2 = 'Mᴀʀᴄᴏ Sᴇxᴏ'
-    global.namegrupo = 'MvrcoSex'
+    global.namegrupo = 'Chim-Bot'
     global.nameclub = 'Mᴀʀᴄᴏ Sᴇxᴏ'
     global.namecomu = 'Mᴀʀᴄᴏ Sᴇxᴏ'
 
@@ -66,7 +66,7 @@ handler.all = async function (m) {
 
     //ENLACES
     var grupo = 'https://chat.whatsapp.com/HqhAoXS8TCcJIn0KrbJZKz'
-    var github = 'https://github.com/KillzN/MvrcoSex'
+    var github = 'https://github.com/KillzN/Chim-Bot'
     var web = 'https://killznstore.com/'
     let instagram = 'https://www.instagram.com/ineffable.mvrco'
 
@@ -134,7 +134,7 @@ handler.all = async function (m) {
 
     global.authsticker = `𝙼𝚊𝚛𝚌𝚘 𝚂𝚎𝚡𝚘`;
 
-    global.packsticker = `KɪʟʟᴢN`
+    global.packsticker = `Chim-Bot`
 
     //FAKES
     global.fkontak = { key: { participants: "0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` } }, "participant": "0@s.whatsapp.net" }
@@ -148,17 +148,17 @@ handler.all = async function (m) {
     //ID CANALES
     global.idchannel = '120363046971143826@newsletter'
     global.canalIdM = ["120363046971143826@newsletter", "120363046971143826@newsletter", "120363046971143826@newsletter"]
-    global.canalNombreM = ["Pᴏʀɴʜᴜʙ: @BʏKɪʟʟᴢN", "Pᴏʀɴʜᴜʙ: @BʏKɪʟʟᴢN", "Pᴏʀɴʜᴜʙ: @BʏKɪʟʟᴢN"]
+    global.canalNombreM = ["Chim-Bot", "Chim-Bot", "Chim-Bot"]
     global.channelRD = await getRandomChannel()
     // global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "3876577197-120363302285079181@g.us" } : {}) }, message: { orderMessage: { itemCount : -999999, status: 1, surface : 1, message: `${packname}`, orderTitle: 'Bang', thumbnail: icons, sellerJid: '0@s.whatsapp.net'}}}
 
     global.icono = [
-        'https://files.catbox.moe/qmhhxy.png',
-        'https://files.catbox.moe/qmhhxy.png',
-        'https://files.catbox.moe/qmhhxy.png',
-        'https://files.catbox.moe/qmhhxy.png',
-        'https://files.catbox.moe/qmhhxy.png',
-        'https://files.catbox.moe/qmhhxy.png',
+        'https://files.catbox.moe/mszw73.jpg',
+        'https://files.catbox.moe/mszw73.jpg',
+        'https://files.catbox.moe/mszw73.jpg',
+        'https://files.catbox.moe/mszw73.jpg',
+        'https://files.catbox.moe/mszw73.jpg',
+        'https://files.catbox.moe/mszw73.jpg',
     ].getRandom()
 
     global.urls = [

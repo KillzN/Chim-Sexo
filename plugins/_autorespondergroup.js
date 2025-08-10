@@ -6,7 +6,7 @@ handler.all = async function (m) {
   const chat = global.db.data.chats[m.chat];
   if (chat?.isBaneed) return;
 
-  if (/^@56983073328$/i.test(m.text)) {
+  if (/^@59178140029$/i.test(m.text)) {
     conn.reply(m.chat, `*No menciones a mi propietario, ¡deja de joder! 😡*`, m);
     return !0;
   }

@@ -5,7 +5,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
     const fkontak = { "key": { "participants": "0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` } }, "participant": "0@s.whatsapp.net" }
     let chat = global.db.data.chats[m.chat]
     let usuario = `@${m.sender.split`@`[0]}`
-    let pp = await conn.profilePictureUrl(m.chat, 'image').catch(_ => null) || 'https://files.catbox.moe/qmhhxy.png'
+    let pp = await conn.profilePictureUrl(m.chat, 'image').catch(_ => null) || 'https://files.catbox.moe/mszw73.jpg'
 
     let nombre, foto, edit, newlink, status, admingp, noadmingp, aceptar
     nombre = `*💫 ${usuario} HA CAMBIADO EL NOMBRE DEL GRUPO*`
